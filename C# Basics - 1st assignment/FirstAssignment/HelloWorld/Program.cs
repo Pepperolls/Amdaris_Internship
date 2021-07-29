@@ -43,7 +43,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Time now = new Time(15, 36, 48);
+            Time now = new Time {Hour = 15, Minutes = 36, Seconds = 48 };
             Console.WriteLine($"The time is: {now}");
 
             string Make = Console.ReadLine();
