@@ -46,7 +46,12 @@ namespace HelloWorld
             Time now = new Time(15, 36, 48);
             Console.WriteLine($"The time is: {now}");
 
-            Car car = new Car("Dacia", "Logan", "Petrol", 1.4);
+            string Make = Console.ReadLine();
+            string Model = Console.ReadLine();
+            string FuelType = Console.ReadLine();
+            double EngineCC = Convert.ToDouble(Console.ReadLine());
+
+            Car car = new Car(Make, Model, FuelType, EngineCC);
             Console.WriteLine($"\n{car}");
         }
     }
