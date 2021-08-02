@@ -8,8 +8,8 @@ namespace Hierarchy
     }
     class Car : Vehicle
     {
-        public String Make;
-        public String Model;
+        public string Make;
+        public string Model;
         public override void Drive()
         {
             Console.WriteLine("You are now driving");
@@ -17,7 +17,7 @@ namespace Hierarchy
     }
     class FuelTypeCar : Car
     {
-        public String FuelType;
+        public string FuelType;
         public uint EngineCc;
         public uint Fuel;
         public override void Drive()
@@ -38,7 +38,7 @@ namespace Hierarchy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("This is just a sample");
         }
     }
 }
