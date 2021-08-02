@@ -11,7 +11,6 @@ namespace ClassesAssignment
         private uint fuel;
         private uint mileage;
         private bool isEngineStarted;
-
         public Car(String make, String model, String fuelType, uint engineCc)
         {
             this.make = make;
