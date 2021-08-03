@@ -72,6 +72,9 @@ namespace StringsApp
             StringBuilder sb4 = new StringBuilder("zesz", 10);
             sb4.Replace('z', 't');
             Console.WriteLine(sb4);
+
+            sb3.Remove(0, 6);
+            Console.WriteLine(sb3);
         }
     }
 }
