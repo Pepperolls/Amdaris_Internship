@@ -27,6 +27,14 @@ namespace Exceptions
                 throw new PersonIsNotAnAdultException("Person is not an adult!");
             Console.WriteLine("Enjoy your drink!");
         }
+
+    }
+    
+    class NewPerson
+    {
+        private uint age;
+        private string name;
+        private string birthPlace;
     }
     public class PersonIsNotAnAdultException : Exception
     {
@@ -37,7 +45,6 @@ namespace Exceptions
         public PersonIsNotAnAdultException(string message, Exception inner) : base(message, inner) { }
     }
 
-
     class Program
     {
         static void Main(string[] args)
@@ -45,8 +52,32 @@ namespace Exceptions
             RandomExceptions a = new RandomExceptions();
             a.WithdrawFunds(10, 10); //Modify the 2nd parameter over 10 to see the exception occur.
 
-            Person p = new Person(17);
-            p.HaveADrink();
+            Person p1 = new Person(18); //Modify number below 18 to see the exception occur.
+            p1.HaveADrink();
+
+            int n1;
+            int n2;
+            try
+            {
+                Console.WriteLine("First number:");
+                n1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Second number:");
+                n2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(n1 / n2);
+                
+            }
+            catch(ArithmeticException exception)
+            {
+                throw new ArithmeticException("You cannot divide by 0!", exception); //Try reading the 2nd number as 0 to see the exception occur.
+            }
+            catch(Exception exception)
+            {
+                throw new Exception("Invalid numbers!", exception); //Try reading some words instead of a number to see the exception occur.
+            }
+            finally
+            {
+                Console.WriteLine("Operation successful");
+            }
         }
     }
 }
