@@ -29,13 +29,6 @@ namespace Exceptions
         }
 
     }
-    
-    class NewPerson
-    {
-        private uint age;
-        private string name;
-        private string birthPlace;
-    }
     public class PersonIsNotAnAdultException : Exception
     {
         public PersonIsNotAnAdultException() { }
