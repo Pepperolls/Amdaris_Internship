@@ -8,17 +8,27 @@ namespace LibraryApp
 {
     class Author
     {
-        public Author(int id, string name, DateTime birthDate, List<string> publishedBooks)
+        public Author(int id, string name, DateTime birthDate)
         {
-            this.Id = id;
-            this.Name = name;
-            this.BirthDate = birthDate;
-            this.PublishedBooks = publishedBooks;
+            Id = id;
+            Name = name;
+            BirthDate = birthDate;
+            BooksWritten = new List<Book> { };
+        }
+
+        public void WriteBook(Book book)
+        {
+            BooksWritten.Add(book);
         }
 
         public int Id { get; }
         public string Name { get; }
         public DateTime BirthDate { get; }
-        public List<string> PublishedBooks { get; }
+        public List<Book> BooksWritten { get; }
+
+        public override string ToString()
+        {
+            return $"Name: {Name}, BirthDate: {BirthDate}";
+        }
     }
 }

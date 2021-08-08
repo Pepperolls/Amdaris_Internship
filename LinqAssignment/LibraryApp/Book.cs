@@ -22,5 +22,10 @@ namespace LibraryApp
         public DateTime PublishDate { get; }
         public Author Author { get; }
         public List<string> Categories { get; }
+
+        public override string ToString()
+        {
+            return $"Title: {Title}, Author: {Author.Name}";
+        }
     }
 }
