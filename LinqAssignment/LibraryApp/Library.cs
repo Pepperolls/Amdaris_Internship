@@ -25,9 +25,15 @@ namespace LibraryApp
             BookCollection.Remove(book);
         }
 
-        public IEnumerable<Book> GetBookCollectionPublishedAfter(DateTime publishYear)
+        public List<Book> SeeBookCollection()
         {
-            return BookCollection.Where(Book => (DateTime.Compare(Book.PublishDate, publishYear.AddYears(1)) > 0));
+            return BookCollection;
+        }
+
+        public List<Book> GetBooksPublishedAfter(DateTime publishYear)
+        {
+            var booksAfter = BookCollection.Where(Book => Book.PublishDate.Year > publishYear.Year);
+            return booksAfter.ToList();
         }
     }
 }

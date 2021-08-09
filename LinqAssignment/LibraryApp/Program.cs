@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LibraryApp
 {
@@ -39,15 +40,16 @@ namespace LibraryApp
 
             Book book2 = new Book(2, "Light weight baby", publishDate2, author1, categories2);
             author1.WriteBook(book2);
-       
-            /*Console.WriteLine(author1.ToString());
-            author1.BooksWritten.ForEach(Console.WriteLine);*/
 
             lib1.AddBookToCollection(book1);
             lib1.AddBookToCollection(book2);
-            lib1.BookCollection.ForEach(Console.WriteLine);
-            lib1.RemoveBookFromCollection(book1);
-            lib1.BookCollection.ForEach(Console.WriteLine);
+            //lib1.SeeBookCollection().ForEach(Console.WriteLine);
+
+            //lib1.RemoveBookFromCollection(book1);
+            //lib1.SeeBookCollection().ForEach(Console.WriteLine);
+
+            lib1.GetBooksPublishedAfter(publishDate1).ForEach(Console.WriteLine);
+           
         }
     }
 }
