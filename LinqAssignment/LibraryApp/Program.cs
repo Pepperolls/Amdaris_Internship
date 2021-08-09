@@ -67,7 +67,7 @@ namespace LibraryApp
 
             //lib1.GetBooksWithCategory("Drama").ForEach(Console.WriteLine);
 
-            //lib1.GetAuthorsWithNumberOfBooks(3).ForEach(Console.WriteLine);
+            lib1.GetAuthorsWithNumberOfBooks(3).ForEach(Console.WriteLine);
         }
     }
 }
