@@ -10,11 +10,11 @@ namespace LibraryApp
     {
         public Book(int id, string title, DateTime publishDate, Author author, List<string> categories)
         {
-            this.Id = id;
-            this.Title = title;
-            this.PublishDate = publishDate;
-            this.Author = author;
-            this.Categories = categories;
+            Id = id;
+            Title = title;
+            PublishDate = publishDate;
+            Author = author;
+            Categories = categories;
         }
 
         public int Id { get; }
@@ -22,6 +22,11 @@ namespace LibraryApp
         public DateTime PublishDate { get; }
         public Author Author { get; }
         public List<string> Categories { get; }
+
+        public string GetAuthorName()
+        {
+            return Author.Name;
+        }
 
         public override string ToString()
         {

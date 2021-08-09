@@ -32,12 +32,19 @@ namespace LibraryApp
 
         public List<Book> GetBooksPublishedAfter(DateTime publishYear)
         {
-            return BookCollection.Where(Book => Book.PublishDate.Year > publishYear.Year).ToList();
+            return BookCollection.Where(p => p.PublishDate.Year > publishYear.Year).ToList();
         }
 
         public List<Book> GetBooksWithCategory(string category)
         {
-            return BookCollection.Where(Book => Book.Categories.Contains(category)).ToList();
+            return BookCollection.Where(p => p.Categories.Contains(category)).ToList();
+        }
+
+        public List<string> GetAuthorsWithNumberOfBooks(int booksNumber)
+        {
+            List<Book> booksOfRequestedAuthors = BookCollection.Where(p => p.Author.BooksWritten.Count >= booksNumber).ToList();
+            List<string> namesOfAuthors = booksOfRequestedAuthors.Select(p => p.Author.Name).ToList();
+            return namesOfAuthors.Distinct().ToList();
         }
     }
 }
