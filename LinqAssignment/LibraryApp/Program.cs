@@ -18,7 +18,7 @@ namespace LibraryApp
 
             List<string> categories1 = new List<string>
             {
-                "Drama",
+                "Horror",
             };
 
             List<string> categories2 = new List<string>
@@ -43,12 +43,15 @@ namespace LibraryApp
 
             lib1.AddBookToCollection(book1);
             lib1.AddBookToCollection(book2);
+
             //lib1.SeeBookCollection().ForEach(Console.WriteLine);
 
             //lib1.RemoveBookFromCollection(book1);
             //lib1.SeeBookCollection().ForEach(Console.WriteLine);
 
-            lib1.GetBooksPublishedAfter(publishDate1).ForEach(Console.WriteLine);
+            //lib1.GetBooksPublishedAfter(publishDate1).ForEach(Console.WriteLine);
+
+            lib1.GetBooksWithCategory("Drama").ForEach(Console.WriteLine);
            
         }
     }
