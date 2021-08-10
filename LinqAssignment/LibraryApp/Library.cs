@@ -43,7 +43,9 @@ namespace LibraryApp
         public List<string> GetAuthorsWithNumberOfBooks(int booksNumber)
         {
             List<Book> booksOfRequestedAuthors = BookCollection.Where(p => p.Author.BooksWritten.Count >= booksNumber).ToList();
+
             List<string> namesOfAuthors = booksOfRequestedAuthors.Select(p => p.Author.Name).ToList();
+
             return namesOfAuthors.Distinct().ToList();
         }
 
@@ -57,12 +59,8 @@ namespace LibraryApp
             {
                 counter = 0;
 
-                //Console.WriteLine(group.Key.Name);
-                //namesOfAuthors.Add(group.Key.Name);
-
                 foreach (var book in group)
                 {
-                    //Console.WriteLine(book);
                     if (book.Categories.Contains(category))
                         counter++;
                 }
@@ -72,6 +70,11 @@ namespace LibraryApp
             }
 
             return namesOfAuthors.ToList();
+        }
+
+        public IEnumerable<IGrouping<int, Book>> GroupBooksByDecade()
+        {
+            return BookCollection.GroupBy(p => (p.PublishDate.Year - p.PublishDate.Year % 10));
         }
     }
 }

@@ -26,11 +26,6 @@ namespace LibraryApp
         public DateTime BirthDate { get; }
         public List<Book> BooksWritten { get; }
 
-        public List<Book> SeeBooksWritten()
-        {
-            return BooksWritten;
-        }
-
         public override string ToString()
         {
             return $"Name: {Name}, BirthDate: {BirthDate}";
