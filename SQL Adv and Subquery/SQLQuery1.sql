@@ -115,3 +115,11 @@ WHERE OwnerIdNo IN (SELECT PersonalIdNo
 					FROM Owners
 					WHERE (FirstName LIKE 'R%')
 						)
+
+SELECT Make, Model,
+	CASE Make 
+	WHEN 'Audi' THEN CubicCapacity / 1000
+	ELSE CubicCapacity
+	END AS DividedCc,
+	FuelType
+FROM Vehicles
