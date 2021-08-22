@@ -20,7 +20,7 @@ INSERT INTO Owners (PersonalIdNo, FirstName, LastName, City, Age)
 INSERT INTO Owners (PersonalIdNo, FirstName, LastName, City, Age)
 	VALUES ('1234567890124', 'Rares', 'Mladin', 'Arad', '18');
 
-SELECT *
+SELECT PersonalIdNo, FirstName, LastName, Age, City 
 FROM Owners
 
 CREATE TABLE [dbo].[Vehicles]
@@ -40,11 +40,20 @@ INSERT INTO Vehicles (OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, Fuel
 INSERT INTO Vehicles (OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, FuelType)
 	VALUES ('1234567890124', '02', 'Dacia', 'Logan', '2019', 'Diesel');
 
-SELECT *
+SELECT OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, FuelType
 FROM Vehicles
 
 
 ALTER TABLE [dbo].[Owners] ADD CONSTRAINT [Owners_PersonalIdNo] FOREIGN KEY ([PersonalIdNo]) REFERENCES [dbo].[Vehicles] ([OwnerIdNo]) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+INSERT INTO Vehicles(OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, FuelType)
+	VALUES ('1234567890125', '03', 'Audi', 'A4', '2020', 'Diesel');
+
 INSERT INTO Owners (PersonalIdNo, FirstName, LastName, City, Age)
-	VALUES ('1234567890125', 'Bora', 'Norbert', 'Arad', '20');
+	VALUES ('1234567890125', 'Eduard', 'Streanga', 'Arad', '18');
+
+SELECT PersonalIdNo, FirstName, LastName, Age, City 
+FROM Owners
+
+SELECT OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, FuelType
+FROM Vehicles
