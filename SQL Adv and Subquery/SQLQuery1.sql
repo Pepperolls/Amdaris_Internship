@@ -91,3 +91,20 @@ FROM VehiclesAux
 
 TRUNCATE TABLE VehiclesAux
 
+DELETE FROM Vehicles
+FROM Vehicles INNER JOIN Owners ON Vehicles.OwnerIdNo = Owners.PersonalIdNo
+WHERE Owners.Age < 30
+
+INSERT INTO Vehicles (OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, CubicCapacity, FuelType)
+	VALUES ('1234567890120', '01', 'Dacia', 'Logan', '2008', '1600', 'Petrol'),
+		   ('1234567890120', '02', 'Audi', 'A6', '2009', '3000', 'Petrol');
+
+INSERT INTO Vehicles(OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, CubicCapacity, FuelType)
+	VALUES ('1234567890123', '07', 'Audi', 'A4', '2013', '2000', 'Diesel');
+
+SELECT Make, Model, FabricationYear
+FROM Vehicles 
+WHERE
+	2000 < (SELECT 
+			CubicCapacity
+			)
