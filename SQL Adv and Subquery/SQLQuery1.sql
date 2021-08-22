@@ -108,3 +108,10 @@ WHERE
 	2000 < (SELECT 
 			CubicCapacity
 			)
+
+SELECT Make, Model, FabricationYear, CubicCapacity
+FROM Vehicles
+WHERE OwnerIdNo IN (SELECT PersonalIdNo 
+					FROM Owners
+					WHERE (FirstName LIKE 'R%')
+						)
