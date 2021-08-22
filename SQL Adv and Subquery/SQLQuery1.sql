@@ -88,3 +88,6 @@ SELECT Make, Model, FabricationYear FROM Vehicles
 
 SELECT Make, Model, FabricationYear
 FROM VehiclesAux
+
+TRUNCATE TABLE VehiclesAux
+
