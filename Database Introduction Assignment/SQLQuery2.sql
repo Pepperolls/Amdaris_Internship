@@ -34,6 +34,9 @@ CREATE TABLE [dbo].[Vehicles]
 	CONSTRAINT [PK_Vehicles] PRIMARY KEY ([OwnerIdNo])
 );
 
+ALTER TABLE [dbo].[Vehicles] 
+	ADD CHECK (FabricationYear > 1985);
+
 INSERT INTO Vehicles (OwnerIdNo, VehicleIdNo, Make, Model, FabricationYear, FuelType)
 	VALUES ('1234567890123', '01', 'Dacia', 'Logan', '2020', 'Petrol');
 
