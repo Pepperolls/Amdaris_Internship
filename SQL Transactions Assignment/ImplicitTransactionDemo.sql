@@ -1,0 +1,19 @@
+SET IMPLICIT_TRANSACTIONS ON;
+
+SELECT @@TRANCOUNT
+
+SELECT PersonalIdNo, FirstName, LastName, Age, City 
+FROM Owners
+WHERE PersonalIdNo = 1234567890120;
+
+SELECT @@TRANCOUNT
+
+UPDATE Owners
+SET FirstName = 'ImplicitDemo'
+WHERE PersonalIdNo = 1234567890120;
+
+SELECT @@TRANCOUNT
+
+rollback
+
+SELECT @@TRANCOUNT
