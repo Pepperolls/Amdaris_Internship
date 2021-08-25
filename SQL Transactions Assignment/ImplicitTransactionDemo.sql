@@ -12,9 +12,7 @@ UPDATE Owners
 SET FirstName = 'ImplicitDemo'
 WHERE PersonalIdNo = 1234567890120;
 
-SELECT @@TRANCOUNT
-
-rollback
+ROLLBACK TRANSACTION
 
 SELECT @@TRANCOUNT
 

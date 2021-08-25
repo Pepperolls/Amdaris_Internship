@@ -1,0 +1,11 @@
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+
+BEGIN TRANSACTION;
+
+SELECT PersonalIdNo, FirstName, LastName, Age, City 
+FROM Owners
+
+SELECT PersonalIdNo, FirstName, LastName, Age, City 
+FROM Owners
+
+ROLLBACK TRANSACTION
