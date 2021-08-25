@@ -18,6 +18,9 @@ WHERE PersonalIdNo = 1234567890120;
 
 SELECT @@TRANCOUNT
 
+COMMIT TRANSACTION
+-- Vom avea 'ImplicitDemo' in loc de numele cautat
 ROLLBACK TRANSACTION
+-- Vom avea din nou numele initial, in loc de 'ImplicitDemo'
 
 SELECT @@TRANCOUNT
