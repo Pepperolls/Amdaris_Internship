@@ -1,0 +1,15 @@
+#getFirstUser {
+  margin-left: 25%;
+}
+#getFirstFiveToDos {
+  margin-left: 25%;
+}
+#firstUser {
+  margin-left: 25%;
+  display: inline-block;
+}
+
+#firstFiveToDos {
+  margin-left: 25%;
+  display: inline-block;
+}
