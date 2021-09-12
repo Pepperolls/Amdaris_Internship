@@ -1,0 +1,31 @@
+#mainDiv {
+  text-align: center;
+}
+
+#toDoList {
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  text-align: center;
+}
+
+#myInput {
+  margin-right: 6.5%;
+}
+
+#toDoCount {
+  margin-left: 6%;
+}
+
+#addToDo {
+  margin-right: 10%;
+}
+
+#countToDos {
+  margin-left: 10%;
+}
+button {
+  margin-top: 1%;
+}
