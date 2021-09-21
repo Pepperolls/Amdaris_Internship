@@ -1,0 +1,32 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+}
+
+[theme='dark'] {
+  --background-color: #3f3f3f;
+  --text-color: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: grey;
+  width: 20%;
+  margin-top: 3px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+button {
+  background-color: grey;
+}
